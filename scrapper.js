@@ -68,6 +68,9 @@ async function collectH2Elements() {
 
     const updatedJsonData = JSON.stringify(jsonData, null, 2);
     fs.writeFileSync('folha-news.json', updatedJsonData);
+
+    console.log(updatedJsonData)
+
     console.log(`Data has been scraped and saved to folha-news.json.`);
 
     console.log(`Number of h2 elements in the array: ${h2CountArray.length}`);
