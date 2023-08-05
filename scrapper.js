@@ -1,3 +1,4 @@
+// App
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 
@@ -121,9 +122,11 @@ function processData(jsonData, date, stopWords) {
     const updatedJsonData = JSON.stringify(jsonData, null, 2);
     fs.writeFileSync('folha-news.json', updatedJsonData);
     console.log(`Data has been processed and saved to folha-news.json.`);
+    
   } else {
     console.error('Error: No data available for processing.');
   }
 }
 
 collectH2Elements();
+
