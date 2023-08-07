@@ -11,7 +11,7 @@ const baseUrl = 'https://www.folha.com.br';
     try {
       // const browser = await puppeteer.launch({ headless: 'new' });
       const browser = await puppeteer.launch({
-        executablePath: process.env.CHROME_BIN || '/app/.apt/opt/google/chrome/chrome',
+        executablePath: process.env.CHROME_BIN,
       });
       const page = await browser.newPage();
       await page.goto(baseUrl, { waitUntil: 'domcontentloaded' });
