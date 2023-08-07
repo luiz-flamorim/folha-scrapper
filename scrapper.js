@@ -7,7 +7,7 @@ const baseUrl = 'https://www.folha.com.br';
 
   async function collectH2Elements() {
     try {
-      const browser = await puppeteer.launch();
+      const browser = await puppeteer.launch({ headless: 'new' });
       const page = await browser.newPage();
       await page.goto(baseUrl, { waitUntil: 'domcontentloaded' });
   
@@ -134,6 +134,6 @@ function processData(jsonData, date, stopWords) {
 
 module.exports = {
   collectH2Elements
-};
+}
 
 
