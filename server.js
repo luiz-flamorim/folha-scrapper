@@ -1,26 +1,29 @@
-
 const express = require('express');
 const { collectH2Elements } = require('./scrapper.js'); // Import the scraper function
-import cors from "cors"
+const cors = require('cors');
 
 const app = express();
 
-app.use(cors({origin: 'https://www.herokucdn.com/', credentials: true}))
+app.use(cors({ origin: 'https://www.herokucdn.com', credentials: true }));
 
 app.get('/', async (req, res) => {
   try {
     // Call the scraper function directly
     const scrapingResult = await collectH2Elements();
-    
+
     // Format the scraping result as HTML elements
-    const resultHTML = scrapingResult.map((item, index) => `
+    const resultHTML = scrapingResult
+      .map(
+        (item, index) => `
       <div>
         <h2>${item.Title}</h2>
         <p><strong>Link:</strong> <a href="${item.Link}" target="_blank">${item.Link}</a></p>
         <p><strong>Overview:</strong> ${item.Overview}</p>
       </div>
-    `).join('');
-    
+    `
+      )
+      .join('');
+
     // Create the complete HTML response
     const htmlResponse = `
       <html>
@@ -35,17 +38,11 @@ app.get('/', async (req, res) => {
         </body>
       </html>
     `;
-    
-    res
-      .status(200)
-      .send(htmlResponse)
-      .end();
+
+    res.status(200).send(htmlResponse);
   } catch (error) {
     console.error('Error during scraping:', error);
-    res
-      .status(500)
-      .send('An error occurred during scraping')
-      .end();
+    res.status(500).send('An error occurred during scraping');
   }
 });
 
