@@ -5,7 +5,7 @@ import cors from "cors"
 
 const app = express();
 
-app.use(cors({origin: 'https://folha-scrapper-117789299b68.herokuapp.com/', credentials: true}))
+app.use(cors({origin: 'https://www.herokucdn.com/', credentials: true}))
 
 app.get('/', async (req, res) => {
   try {
