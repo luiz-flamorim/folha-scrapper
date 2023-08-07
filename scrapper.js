@@ -9,11 +9,6 @@ const baseUrl = 'https://www.folha.com.br';
 
   async function collectH2Elements() {
     try {
-      // const browser = await puppeteer.launch({ headless: 'new' });
-      // const browser = await puppeteer.launch({
-      //   executablePath: '/app/.apt/opt/google/chrome/chrome',
-      // });
-
       const browser = await puppeteer.launch({
         headless: 'new',
         'args' : [
