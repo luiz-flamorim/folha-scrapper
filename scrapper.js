@@ -1,13 +1,18 @@
 // App
 const fs = require('fs');
-const puppeteer = require('puppeteer');
+// const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
+
 
 const baseUrl = 'https://www.folha.com.br';
 
 
   async function collectH2Elements() {
     try {
-      const browser = await puppeteer.launch({ headless: 'new' });
+      // const browser = await puppeteer.launch({ headless: 'new' });
+      const browser = await puppeteer.launch({
+        executablePath: process.env.CHROME_BIN || null,
+      });
       const page = await browser.newPage();
       await page.goto(baseUrl, { waitUntil: 'domcontentloaded' });
   
