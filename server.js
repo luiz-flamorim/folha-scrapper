@@ -20,7 +20,7 @@
 
 
 const express = require('express');
-const { collectH2Elements } = require('./scraper'); // Import the scraper function
+const { collectH2Elements } = require('./scraper.js'); // Import the scraper function
 
 const app = express();
 
