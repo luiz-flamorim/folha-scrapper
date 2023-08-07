@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors({ origin: 'https://folha-scrapper-117789299b68.herokuapp.com/', credentials: true }));
+app.use(cors());
 
 app.get('/', async (req, res) => {
   try {
