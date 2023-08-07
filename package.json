@@ -22,13 +22,5 @@
   },
   "engines": {
     "node": "14.x"
-  },
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    },
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-apt.git"
-    }
-  ]
+  }
 }

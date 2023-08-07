@@ -11,7 +11,7 @@ const baseUrl = 'https://www.folha.com.br';
     try {
       // const browser = await puppeteer.launch({ headless: 'new' });
       const browser = await puppeteer.launch({
-        executablePath: '/app/.apt/usr/bin/chromium-browser', // Path to installed Chromium
+        executablePath: '/app/.apt/opt/google/chrome/chrome',
       });
       const page = await browser.newPage();
       await page.goto(baseUrl, { waitUntil: 'domcontentloaded' });
