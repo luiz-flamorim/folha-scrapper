@@ -1,26 +1,6 @@
-// const express = require('express');
-// // importar a função scrapper aqui
-
-// const app = express();
-// // provável importar o scrapper  echamar a funç∫ao
- 
-// app.get('/', (req, res) => {
-//   res
-//     .status(200)
-//     .send('Hello server is running')
-//     .end();
-// });
- 
-// // Start the server
-// const PORT = process.env.PORT || 8080;
-// app.listen(PORT, () => {
-//   console.log(`App listening on port ${PORT}`);
-//   console.log('Press Ctrl+C to quit.');
-// });
-
 
 const express = require('express');
-const { collectH2Elements } = require('./scraper.js'); // Import the scraper function
+const { collectH2Elements } = require('./scrapper.js'); // Import the scraper function
 
 const app = express();
 
