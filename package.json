@@ -18,5 +18,13 @@
     "firebase-admin": "^11.10.1",
     "puppeteer": "^20.9.0",
     "puppeteer-core": "^21.0.1"
-  }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-apt.git"
+    }
+  ]
 }
