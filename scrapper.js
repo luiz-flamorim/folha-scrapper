@@ -10,9 +10,18 @@ const baseUrl = 'https://www.folha.com.br';
   async function collectH2Elements() {
     try {
       // const browser = await puppeteer.launch({ headless: 'new' });
+      // const browser = await puppeteer.launch({
+      //   executablePath: '/app/.apt/opt/google/chrome/chrome',
+      // });
+
       const browser = await puppeteer.launch({
-        executablePath: '/app/.apt/opt/google/chrome/chrome',
+        headless: 'new',
+        'args' : [
+          '--no-sandbox',
+          '--disable-setuid-sandbox'
+        ]
       });
+
       const page = await browser.newPage();
       await page.goto(baseUrl, { waitUntil: 'domcontentloaded' });
   
