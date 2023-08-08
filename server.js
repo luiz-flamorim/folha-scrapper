@@ -1,15 +1,14 @@
 const express = require('express');
 const { collectH2Elements } = require('./scrapper.js'); // Import the scraper function
+const app = express();
 const cors = require('cors');
 
-const app = express();
-
 app.use(cors({
-  origin: "https://folha-scrapper-117789299b68.herokuapp.com/",
+  origin: "https://folha-scrapper-117789299b68.herokuapp.com",
 }));
 
 app.get('/', async (req, res) => {
-  res.header("Access-Control-Allow-Origin","https://folha-scrapper-117789299b68.herokuapp.com/")
+  // res.header("Access-Control-Allow-Origin","https://folha-scrapper-117789299b68.herokuapp.com/")
   try {
     
 
